@@ -19,13 +19,14 @@
             while (!done)
             {
                 Console.Write("Your bet: ");
-                while (Int32.TryParse(Console.ReadLine(), out bet))
+                while (!Int32.TryParse(Console.ReadLine(), out bet) || bet <= 0 || bet > chips )
                 {
-                    Console.WriteLine("invalid test");
+                    Console.WriteLine();
+                    Console.WriteLine("Invalid bet. Please type another bet. ");
                     Console.WriteLine();
                 }
                 Console.WriteLine();
-                Console.WriteLine("You've made a bet of " + bet + "! Now, you gotta choose rock (r), paper (p), or scissors (s)!");
+                Console.WriteLine("You've made a bet of " + bet + "! Now, you gotta choose rock (type \"r\"), paper (type \"p\"), or scissors (type \"s\")!");
 
 
 
