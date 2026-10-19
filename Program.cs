@@ -29,6 +29,7 @@
                 }
                 Console.WriteLine();
                 Console.WriteLine("You've made a bet of " + bet + "! Now, you gotta choose rock (type \"rock\"), paper (type \"paper\"), or scissors (type \"scissors\")!");
+                Console.WriteLine();
                 playerChoice = Console.ReadLine();
                 while (playerChoice.ToLower() != "rock" && playerChoice.ToLower() != "paper" && playerChoice.ToLower() != "scissors")
                 {
@@ -36,7 +37,7 @@
                     Console.WriteLine("Invalid choice. Please choose again.");
                     Console.WriteLine();
                     playerChoice = Console.ReadLine();
-                    
+
                 }
                 if (playerChoice.ToLower() == "rock")
                 {
@@ -72,7 +73,7 @@
                     cpuChoice = "scissors";
                 }
 
-                // All possib
+
                 if (cpuChoice == "rock")
                 {
                     Console.WriteLine("The dealer has chosen... rock!");
@@ -88,7 +89,7 @@
                     Console.WriteLine("The dealer has chosen... scissors!");
                     Console.WriteLine();
                 }
-                if (playerChoice == "rock" && cpuChoice == "scissors" || playerChoice == "paper"  && cpuChoice == "rock" || playerChoice == "scissors" && cpuChoice == "paper")
+                if (playerChoice == "rock" && cpuChoice == "scissors" || playerChoice == "paper" && cpuChoice == "rock" || playerChoice == "scissors" && cpuChoice == "paper")
                 {
                     Console.WriteLine("You won! You get " + bet + " chips!");
                     chips = chips + bet;
@@ -105,8 +106,38 @@
                     Console.WriteLine("Ooh! It's a tie! Go again!");
                     Console.WriteLine();
                 }
+                Console.WriteLine("Do you wish to quit? (Yes or No)");
+                Console.WriteLine();
+                quitChoice = Console.ReadLine();
+                while (quitChoice.ToLower() != "yes" && quitChoice.ToLower() != "no")
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("Invalid choice. Please choose again.");
+                    Console.WriteLine();
+                    quitChoice = Console.ReadLine();
 
+
+                }
+                if (quitChoice == "yes")
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("Awh! Thats too bad! See ya!");
+                    done = true;
+                }
+                else
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("That's great! Let's continue!");
+                    Console.WriteLine();
+                }
+                if (chips <= 0)
+                {
+                    Console.WriteLine("Oof! You're outta chips! See ya!");
+                    done = true;
+                }
             }
+            Console.WriteLine("Come again soon!");
+            Console.WriteLine("(Restart the program to play again.)");
         }
     }
 }
